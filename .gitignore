@@ -1,0 +1,85 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env
+
+# ML model artifacts
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+*.pb
+*.tflite
+*.safetensors
+*.bin
+*.ckpt
+
+# ML experiment tracking
+wandb/
+mlruns/
+mlartifacts/
+outputs/
+runs/
+logs/
+tensorboard/
+
+# Data files (large)
+*.csv
+*.parquet
+*.feather
+*.arrow
+*.tfrecord
+*.npy
+*.npz
+data/raw/
+data/processed/
+
+# DVC
+/dvc.lock
+*.dvc
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_output/
+
+# GPU/CUDA
+*.cubin
+*.fatbin
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+.Trash-*
+
+# Docker
+*.tar
+docker-compose.override.yml
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+credentials/
+secrets/
