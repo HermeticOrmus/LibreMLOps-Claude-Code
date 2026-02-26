@@ -1,46 +1,57 @@
-# Model Deployment
+# model-deployment
 
-Serving with TorchServe, TF Serving, Triton, containers
+Model serving with BentoML, TorchServe, Triton Inference Server, FastAPI, ONNX export, and Kubernetes deployment.
 
-## What's Included
+## What This Plugin Does
 
-### Agents
-- **Ml Deploy Engineer** - Specialized agent for Serving with TorchServe, TF Serving, Triton, containers
+Covers the full model deployment lifecycle: ONNX export and validation, FastAPI production serving (model-at-startup, health checks, Prometheus metrics), Triton model repository layout and config.pbtxt, dynamic batching configuration, containerization with Docker, Kubernetes deployment with HPA and resource limits, and canary traffic splitting with Istio.
 
-### Commands
-- `/deploy-model` - Quick-access command for model-deployment workflows
+## When to Use
 
-### Skills
-- **Model Deployment Patterns** - Pattern library and knowledge base for model-deployment
+- Exporting a PyTorch model to ONNX for optimized serving
+- Building a FastAPI ML serving endpoint with proper health checks
+- Configuring Triton Inference Server for multi-model GPU serving
+- Setting up dynamic batching to balance latency and throughput
+- Writing Kubernetes deployment YAML with readiness/liveness probes
+- Implementing canary deployment with Istio traffic weights
+- Load testing a serving endpoint with locust before production traffic
+
+## Components
+
+| Component | Description |
+|-----------|-------------|
+| `agents/ml-deploy-engineer` | Expert in BentoML, TorchServe, Triton, FastAPI, ONNX, KServe, Istio |
+| `skills/model-deployment-patterns` | Code patterns: FastAPI serving, Triton config, ONNX export, canary, load testing |
+| `commands/deploy-model` | `/deploy-model package\|serve\|scale\|rollout` workflows |
+
+## Key Concepts
+
+**Latency vs Throughput**
+Single request latency (p99) vs requests per second are inversely related for fixed resources. Dynamic batching improves throughput at cost of individual request latency. Set `max_queue_delay_microseconds` to cap the latency penalty.
+
+**ONNX for Production**
+PyTorch eager mode has Python interpreter overhead. ONNX Runtime eliminates it: 2–3x speedup typical. Export with `dynamic_axes` for variable batch sizes. Always validate numerical equivalence after export.
+
+**Health vs Readiness**
+`/health` = is the process alive (liveness probe). `/ready` = is the model loaded and ready to serve (readiness probe). Never merge them. Kubernetes kills pods that fail liveness, and stops routing to pods that fail readiness.
+
+**Canary Pattern**
+Route 10% of traffic to new model version. Monitor error rate and latency for 30 minutes. If stable, increase to 50%, then 100%. Istio VirtualService weights control the split. Automated rollback if error rate exceeds threshold.
 
 ## Quick Start
 
-1. Copy this plugin to your Claude Code plugins directory
-2. Use the agent for guided, multi-step workflows
-3. Use the command for quick, targeted operations
-4. Reference the skill for patterns and best practices
-
-## Usage Examples
-
-```
-# Use the command directly
-/deploy-model analyze
-
-# Use the command with specific input
-/deploy-model generate --context "your project"
-
-# Reference patterns from the skill
-"Apply model-deployment-patterns patterns to this implementation"
+```bash
+pip install fastapi uvicorn onnxruntime tritonclient locust
 ```
 
-## Key Patterns
+```python
+# Minimal FastAPI serving
+from fastapi import FastAPI
+app = FastAPI()
 
-- Follow established conventions for model-deployment
-- Validate inputs before processing
-- Document decisions and rationale
-- Test outputs against requirements
-- Iterate based on feedback
+@app.get("/health")
+def health(): return {"status": "healthy"}
 
-## Related Plugins
-
-Check the main README for related plugins in this collection.
+@app.post("/predict")
+async def predict(request: dict): return model.predict(request["features"])
+```

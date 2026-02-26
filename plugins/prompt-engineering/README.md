@@ -1,46 +1,64 @@
-# Prompt Engineering
+# prompt-engineering
 
-Prompt design, chain-of-thought, few-shot, evaluation
+Chain-of-thought, few-shot design, ReAct agents, structured output with Pydantic+instructor, prompt injection defense, DSPy optimization, and Git-tracked prompt versioning.
 
-## What's Included
+## What This Plugin Does
 
-### Agents
-- **Prompt Engineer** - Specialized agent for Prompt design, chain-of-thought, few-shot, evaluation
+Covers systematic prompt engineering from baseline through production: zero-shot vs few-shot selection, chain-of-thought (Wei et al. 2022) with XML-delimited reasoning, ReAct (Yao et al. 2022) tool-use agents, structured output enforcement with instructor + Pydantic models, prompt injection sanitization and role isolation, DSPy BootstrapFewShot for automated few-shot selection, and a YAML-based prompt registry for versioning and A/B testing.
 
-### Commands
-- `/prompt-eng` - Quick-access command for prompt-engineering workflows
+## When to Use
 
-### Skills
-- **Prompt Engineering Patterns** - Pattern library and knowledge base for prompt-engineering
+- Building a CoT prompt for multi-step reasoning tasks (math, clinical coding, legal analysis)
+- Enforcing Pydantic schema on LLM outputs with instructor retry on validation failure
+- Designing a ReAct agent that interleaves reasoning and tool calls
+- Defending against prompt injection from untrusted user input
+- Running DSPy to automatically find better few-shot demonstrations instead of manual iteration
+- Versioning prompts in Git-tracked YAML files with evaluation results and changelog
+- Evaluating a prompt change against a labeled test set before deploying
+
+## Components
+
+| Component | Description |
+|-----------|-------------|
+| `agents/prompt-engineer` | Expert in CoT, few-shot, ReAct, DSPy, injection defense, structured output |
+| `skills/prompt-engineering-patterns` | CoT few-shot, instructor+Pydantic, ReAct agent, injection sanitization, DSPy optimization |
+| `commands/prompt-eng` | `/prompt-eng design\|test\|optimize\|version` workflows |
+
+## Key Concepts
+
+**Chain-of-Thought**
+Wei et al. (2022) showed that prompting with "Let's think step by step" or providing reasoning examples improves accuracy by 40-60% on multi-step tasks. CoT works by forcing intermediate computation before the final answer. The model cannot shortcut to a wrong answer if it must show its work.
+
+**Structured Output**
+LLM outputs are strings. Systems that parse them with regex break on minor formatting changes. Use instructor with Pydantic models: define the schema, get typed objects back, let the library handle retry on validation failure. Your application code never touches raw LLM strings.
+
+**Prompt Injection**
+User-controlled text interpolated into prompts is an attack surface. An attacker can include "Ignore all previous instructions" in a document and redirect model behavior. Sanitize inputs, put untrusted content in user turns (not system), and wrap in explicit delimiters.
+
+**DSPy Over Manual Iteration**
+Manually trying different few-shot examples is biased by what the developer finds intuitive. DSPy BootstrapFewShot searches over candidate demonstrations using a labeled validation metric. It finds examples that actually improve measured performance, not examples that look reasonable.
 
 ## Quick Start
 
-1. Copy this plugin to your Claude Code plugins directory
-2. Use the agent for guided, multi-step workflows
-3. Use the command for quick, targeted operations
-4. Reference the skill for patterns and best practices
-
-## Usage Examples
-
-```
-# Use the command directly
-/prompt-eng analyze
-
-# Use the command with specific input
-/prompt-eng generate --context "your project"
-
-# Reference patterns from the skill
-"Apply prompt-engineering-patterns patterns to this implementation"
+```bash
+pip install anthropic instructor dspy-ai pydantic
 ```
 
-## Key Patterns
+```python
+import instructor
+from anthropic import Anthropic
+from pydantic import BaseModel
 
-- Follow established conventions for prompt-engineering
-- Validate inputs before processing
-- Document decisions and rationale
-- Test outputs against requirements
-- Iterate based on feedback
+client = instructor.from_anthropic(Anthropic())
 
-## Related Plugins
+class Sentiment(BaseModel):
+    label: str
+    confidence: float
 
-Check the main README for related plugins in this collection.
+result = client.messages.create(
+    model="claude-opus-4-6", max_tokens=128,
+    messages=[{"role": "user", "content": "Classify: 'I love this product'"}],
+    response_model=Sentiment,
+)
+print(result.label, result.confidence)
+```
