@@ -1,65 +1,36 @@
-# Advanced Learning Path - ML/AI Operations
+# Advanced — distributed training + RLHF + multi-tenant inference
 
-## Overview
+## Distributed training
 
-This advanced path covers ML/AI Operations concepts and practices, progressing from fundamentals to practical application with Claude Code plugins.
+- DDP (Data Distributed Parallel): replicate model, split data
+- FSDP (Fully Sharded): shard model, split data; for models bigger than single-GPU memory
+- DeepSpeed: ZeRO stages + offloading; for very large models
+- Pipeline parallelism: split model across GPUs in sequence; for very large models
 
-## Prerequisites
+## RLHF / DPO / ORPO
 
-- Completed intermediate path\n- Deployed at least one model\n- Experience with experiment tracking
+- RLHF: reward model + PPO; complex, expensive, high quality
+- DPO (Direct Preference Optimization): simpler than RLHF, comparable results in many cases
+- ORPO: even simpler, fewer hyperparameters
 
-## Modules
+For most fine-tuning needs in 2026, DPO + LoRA hits 80% of RLHF quality at 10% cost.
 
-### Module 1: Distributed Training
+## Multi-tenant inference
 
-#### Concepts
-- Multi-GPU training (DDP)\n- Model parallelism strategies\n- Mixed precision training\n- Gradient accumulation\n- Training on cloud clusters
+- vLLM: high-throughput batching, prefix caching
+- Triton: multi-model serving, GPU sharing
+- KServe: K8s-native serving, autoscaling
+- BentoML: Python-first, easy deployment
 
-#### Hands-On Exercise
-Apply the concepts using the relevant plugins. Start simple, build complexity gradually.
+Cost optimization:
+- Speculative decoding (draft model + verify with main)
+- Continuous batching (vLLM's PagedAttention)
+- Quantization (INT4/INT8 for 2-4× throughput at small quality cost)
+- GPU MIG (NVIDIA H100) — partition GPU into smaller units
 
-#### Key Takeaways
-- Understand the fundamentals of Distributed Training
-- Know when to apply these patterns
-- Create basic implementations confidently
+## What's still hard
 
----
-
-### Module 2: LLM Fine-Tuning
-
-#### Concepts
-- LoRA and QLoRA techniques\n- Dataset preparation for fine-tuning\n- RLHF fundamentals\n- Prompt engineering at scale\n- RAG architecture design
-
-#### Hands-On Exercise
-Build on Module 1 with more advanced techniques. Focus on quality and reproducibility.
-
-#### Key Takeaways
-- Integrate multiple concepts effectively
-- Apply established best practices
-- Evaluate and improve existing work
-
----
-
-### Module 3: Production ML Systems
-
-#### Concepts
-- ML platform architecture\n- Model monitoring and drift detection\n- Feature store at scale\n- CI/CD for ML pipelines\n- Cost optimization for GPU workloads
-
-#### Hands-On Exercise
-Combine everything into a comprehensive project demonstrating full mastery.
-
-#### Key Takeaways
-- Synthesize all module concepts
-- Make informed architectural decisions
-- Create production-quality implementations
-
-## Assessment
-
-- [ ] Complete all module exercises
-- [ ] Build a project combining all concepts
-- [ ] Review against skill file patterns
-- [ ] Identify areas for deeper study
-
-## Next Steps
-
-You've mastered MLOps. Consider specializing in LLM systems, computer vision pipelines, or ML platform engineering.
+- Multi-modal at scale (text + image + audio + video together)
+- Continual learning without catastrophic forgetting
+- Long-context (1M+ tokens) at production cost
+- Truly reliable agents (multi-step planning with self-correction)

@@ -1,14 +1,16 @@
 # Changelog
 
-All notable changes to LibreMLOps for Claude Code will be documented in this file.
+## [0.2.0] — 2026-05-23
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+- LibreUIUX doc chrome applied
+- **rag-architecture** plugin promoted to depth-complete
+- 3-tier learning paths added
+- 20 plugins total: 1 depth-complete, 19 shell-improved
 
-## [0.1.0] - 2026-02-24
+### v0.3-v0.5 priorities
+- v0.3: model-deployment, model-monitoring, llm-fine-tuning
+- v0.4: data-pipelines, vector-databases, prompt-engineering
+- v0.5: distributed-training, gpu-optimization, experiment-tracking
 
-### Added
-- Initial plugin collection
-- Learning paths (beginner, intermediate, advanced)
-- Automated hooks (session-start, pre-tool-use, post-tool-use)
-- Contributing guidelines and Code of Conduct
-- MIT License
+## [0.1.0]
+20 plugin shells. Initial release.
