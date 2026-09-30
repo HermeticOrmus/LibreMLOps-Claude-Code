@@ -29,55 +29,83 @@ Twenty plugins covering the full ML lifecycle plus the LLMOps layer the 2024-202
 
 ### Data layer
 
-| Plugin | Domain |
-|---|---|
-| data-pipelines | Airflow, Dagster, Prefect, Argo Workflows |
-| data-versioning | DVC, LakeFS, data contracts |
-| data-labeling | Label Studio, Prodigy, weak supervision |
-| feature-engineering | Feast, Tecton, feature store patterns |
+| Plugin | Domain | Command |
+|---|---|---|
+| data-pipelines | Airflow, Dagster, Prefect, Argo Workflows | `/ml-pipeline` |
+| data-versioning | DVC, LakeFS, data contracts | `/data-version` |
+| data-labeling | Label Studio, Prodigy, weak supervision | `/label-data` |
+| feature-engineering | Feast, Tecton, feature store patterns | `/features` |
 
 ### Training
 
-| Plugin | Domain |
-|---|---|
-| model-training | PyTorch + TF training loops, lightning, accelerate |
-| distributed-training | DDP, FSDP, DeepSpeed, multi-GPU + multi-node |
-| gpu-optimization | Memory profiling, mixed precision, FlashAttention, model parallelism |
-| experiment-tracking | MLflow, W&B, Neptune, Comet |
-| llm-fine-tuning | LoRA, QLoRA, full fine-tuning, RLHF, DPO |
+| Plugin | Domain | Command |
+|---|---|---|
+| model-training | PyTorch + TF training loops, lightning, accelerate | `/train-model` |
+| distributed-training | DDP, FSDP, DeepSpeed, multi-GPU + multi-node | `/dist-train` |
+| gpu-optimization | Memory profiling, mixed precision, FlashAttention, model parallelism | `/gpu-optimize` |
+| experiment-tracking | MLflow, W&B, Neptune, Comet | `/track-experiment` |
+| llm-fine-tuning | LoRA, QLoRA, full fine-tuning, RLHF, DPO | `/fine-tune` |
 
 ### Registry + deployment
 
-| Plugin | Domain |
-|---|---|
-| model-registry | MLflow Registry, model versioning, lineage |
-| model-deployment | KServe, BentoML, Triton, SageMaker, Vertex AI |
-| **rag-architecture** ⭐ | Retrieval-augmented generation systems, chunking, embedding, reranking, eval |
-| pytorch-patterns | Idiomatic PyTorch for production |
-| tensorflow-patterns | TF Keras for production, TFX |
-| vector-databases | Pinecone, Weaviate, Qdrant, pgvector, Milvus |
+| Plugin | Domain | Command |
+|---|---|---|
+| model-registry | MLflow Registry, model versioning, lineage | `/model-registry` |
+| model-deployment | KServe, BentoML, Triton, SageMaker, Vertex AI | `/deploy-model` |
+| **rag-architecture** ⭐ | Retrieval-augmented generation systems, chunking, embedding, reranking, eval | `/rag` |
+| pytorch-patterns | Idiomatic PyTorch for production | `/pytorch` |
+| tensorflow-patterns | TF Keras for production, TFX | `/tensorflow` |
+| vector-databases | Pinecone, Weaviate, Qdrant, pgvector, Milvus | `/vectordb` |
 
 ### Operations + monitoring
 
-| Plugin | Domain |
-|---|---|
-| model-monitoring | Drift detection (data drift + concept drift), latency, quality SLOs |
-| model-evaluation | Offline eval, online eval, A/B testing, evaluation harnesses |
-| ml-testing | Unit tests for ML, integration tests, regression suites |
-| mlflow-integration | MLflow end-to-end |
-| prompt-engineering | Structured prompting, few-shot, chain-of-thought, eval-driven prompting |
+| Plugin | Domain | Command |
+|---|---|---|
+| model-monitoring | Drift detection (data drift + concept drift), latency, quality SLOs | `/monitor-model` |
+| model-evaluation | Offline eval, online eval, A/B testing, evaluation harnesses | `/evaluate-model` |
+| ml-testing | Unit tests for ML, integration tests, regression suites | `/ml-test` |
+| mlflow-integration | MLflow end-to-end | `/mlflow` |
+| prompt-engineering | Structured prompting, few-shot, chain-of-thought, eval-driven prompting | `/prompt-eng` |
 
 ⭐ = depth-complete plugin. Remaining 19 shell-improved.
+
+Every plugin ships one agent, one slash command, and one skill: 20 agents, 20 commands, and 20 skills in all. A 21st plugin, `libre-mlops-hooks`, is optional and adds hooks instead (see below).
 
 ---
 
 ## Quick start
+
+### Install from Claude Code
+
+```
+/plugin marketplace add HermeticOrmus/LibreMLOps-Claude-Code
+/plugin install rag-architecture@libre-mlops
+```
+
+The same from a terminal:
+
+```bash
+claude plugin marketplace add HermeticOrmus/LibreMLOps-Claude-Code
+claude plugin install rag-architecture@libre-mlops
+```
+
+Install as many plugins as you need, then restart Claude Code to load them. `/plugin` inside Claude Code opens the plugin manager, where you can browse the rest of the pack.
+
+### Install from a clone
 
 ```bash
 git clone https://github.com/HermeticOrmus/LibreMLOps-Claude-Code.git ~/projects/LibreMLOps-Claude-Code
 cd ~/projects/LibreMLOps-Claude-Code
 ./setup.sh
 ```
+
+`./setup.sh` registers the clone as the `libre-mlops` marketplace and installs all 21 plugins through the Claude Code CLI. `./setup.sh --list` shows them, `./setup.sh --only rag-architecture,model-deployment` installs a subset, and `./setup.sh --uninstall` removes them.
+
+### Optional hooks
+
+`libre-mlops-hooks` prints a one-line summary of the ML stack when a session starts, asks before Claude reads or edits `.env`, key, or secrets files or runs commands that destroy data, models, or run history (`dvc gc`, `mlflow gc`, `aws s3 rm`, recursive deletes of data or checkpoint folders), and after an edit points Claude at the matching test file. Add it with `/plugin install libre-mlops-hooks@libre-mlops`. Details: [plugins/libre-mlops-hooks](plugins/libre-mlops-hooks/README.md).
+
+### First prompt
 
 ```
 /rag design a RAG system for a customer support knowledge base. ~10k documents, mostly long-form articles, multiple languages. Customer queries in natural language. Need eval harness from Day 1.
@@ -100,6 +128,10 @@ PyTorch, TensorFlow/Keras, JAX (light), HuggingFace, MLflow, all three major clo
 ## Disclaimer
 
 Building ML systems for regulated domains (healthcare, finance, hiring, criminal justice) requires compliance work this kit doesn't replace. Bias, fairness, explainability — these are domain + regulatory concerns.
+
+## Feedback
+
+Starred this? Tell us what worked and what is missing: [open a feedback issue](https://github.com/HermeticOrmus/LibreMLOps-Claude-Code/issues/new?template=feedback.yml). Every piece of feedback gets an answer, and changes that come from it are credited in the release notes.
 
 ## Contributing
 
