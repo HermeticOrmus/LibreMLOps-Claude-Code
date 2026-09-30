@@ -1,0 +1,20 @@
+{
+  "name": "model-deployment",
+  "version": "1.0.0",
+  "description": "Model deployment: ONNX export, BentoML, TorchServe, Triton, FastAPI serving, dynamic batching, and canary rollouts.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "model-deployment",
+    "model-serving",
+    "triton",
+    "onnx",
+    "fastapi"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ml-testing",
+  "version": "1.0.0",
+  "description": "ML testing: data quality tests, model unit tests, behavioral tests, and performance regression gates.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "ml-testing",
+    "pytest",
+    "great-expectations",
+    "behavioral-testing"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "mlflow-integration",
+  "version": "1.0.0",
+  "description": "MLflow: tracking server, model signatures, Model Registry, projects, custom flavors, and serving.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "mlflow",
+    "tracking",
+    "model-registry",
+    "model-serving"
+  ]
+}

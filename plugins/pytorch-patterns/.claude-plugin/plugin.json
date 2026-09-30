@@ -1,0 +1,19 @@
+{
+  "name": "pytorch-patterns",
+  "version": "1.0.0",
+  "description": "PyTorch: custom datasets and DataLoaders, nn.Module design, model surgery, custom autograd, and profiling.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "pytorch",
+    "deep-learning",
+    "dataloader",
+    "autograd"
+  ]
+}

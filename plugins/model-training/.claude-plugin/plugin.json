@@ -1,0 +1,19 @@
+{
+  "name": "model-training",
+  "version": "1.0.0",
+  "description": "Model training: PyTorch Lightning and Hugging Face Trainer loops, LR schedules, gradient health, checkpoints, and early stopping.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "training",
+    "pytorch-lightning",
+    "huggingface",
+    "checkpoints"
+  ]
+}

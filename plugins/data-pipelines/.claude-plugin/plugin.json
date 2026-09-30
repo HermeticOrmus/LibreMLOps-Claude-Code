@@ -1,0 +1,20 @@
+{
+  "name": "data-pipelines",
+  "version": "1.0.0",
+  "description": "ML data pipelines: Apache Beam, Spark, dbt, orchestration, streaming features, validation, and backfills.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "data-pipelines",
+    "apache-beam",
+    "spark",
+    "dbt",
+    "airflow"
+  ]
+}

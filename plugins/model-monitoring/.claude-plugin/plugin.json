@@ -1,0 +1,19 @@
+{
+  "name": "model-monitoring",
+  "version": "1.0.0",
+  "description": "Model monitoring: data and concept drift, performance estimation without labels, and alerting without alert fatigue.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "model-monitoring",
+    "drift",
+    "evidently",
+    "observability"
+  ]
+}
