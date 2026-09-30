@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.0.0] - 2026-09-30
+
+The pack is now a Claude Code plugin marketplace. Before this release, `setup.sh` copied folders into `~/.claude/plugins`, where Claude Code does not load plugins from, so none of the agents, commands, or skills were reachable. From 1.0.0 every plugin installs and loads.
+
+### Added
+- Plugin marketplace `libre-mlops` (`.claude-plugin/marketplace.json`) and a `plugin.json` for every plugin. Install with `/plugin marketplace add HermeticOrmus/LibreMLOps-Claude-Code`, then `/plugin install <plugin>@libre-mlops`.
+- Frontmatter with routing descriptions on all 20 agents, 20 commands, and 20 skills, so Claude Code knows when to use each one. Every command carries an `argument-hint` listing its actions.
+- `libre-mlops-hooks`, an optional 21st plugin with three working hooks: a one-line summary of the project's ML stack at session start, a confirmation prompt before Claude reads or edits `.env`, key, or secrets files or runs commands that destroy data, models, or run history, and post-edit checks for empty writes and for a matching test file to run.
+- `/rag` gains four actions (`build`, `query`, `evaluate`, `optimize`) with working LangChain, cross-encoder, and RAGAS code and a list of options, merged in from the older nested command.
+- CI (`.github/workflows/validate.yml`) validates the marketplace and every plugin, then installs all of them into a clean config, on pushes to `main` and on pull requests.
+- A feedback issue form and a Feedback section in the README.
+- A Command column in the README plugin tables.
+
+### Changed
+- Layout: agents moved from `agents/<name>/AGENT.md` to `agents/<name>.md`, commands from `commands/<name>/COMMAND.md` to `commands/<name>.md`, and the loose RAG skill to `skills/rag-architecture/SKILL.md`. File contents moved with them.
+- rag-architecture: the older `rag-architect` agent, nested `/rag` command, and `rag-patterns` skill covered the same ground as the newer `rag-engineer` agent, `/rag` command, and `rag-architecture` skill. Their unique material (component reference for chunking, embeddings, vector stores, hybrid search, re-ranking, and RAGAS, the workflow and tools stack, the four `/rag` actions, and five implementation patterns with anti-patterns) now lives in the newer files, and the older copies are gone. If you called `rag-architect` or the `rag-patterns` skill by name, use `rag-engineer` and `rag-architecture`.
+- `rag-engineer` runs on the session's model (`model: inherit`) instead of pinning Sonnet.
+- `setup.sh` installs through the Claude Code CLI (`claude plugin marketplace add`, `claude plugin install`). New flags: `--list`, `--scope`, `--uninstall`. `--plugins-dir` is still accepted and ignored with a note.
+- QUICK_START and TROUBLESHOOTING cover the new install and use the real command names (`/monitor-model`, `/deploy-model`, `/fine-tune`).
+
+### Fixed
+- The repository hook scripts expected command-line arguments, but Claude Code sends hook input as JSON on stdin, and the old `setup.sh` never registered them, so they never ran. They also wrote log files next to themselves. The `libre-mlops-hooks` versions read the JSON with `jq`, answer in the format Claude Code expects, and write nothing to disk. The originals stay in `hooks/` for reference.
+
+### Upgrading from 0.2.0
+- Remove the old copies, which never loaded: `rm -rf ~/.claude/plugins/libre-mlops-*`
+- Install again with `./setup.sh` or `/plugin install <plugin>@libre-mlops`, then restart Claude Code.
+
 ## [0.2.0] — 2026-05-23
 
 - LibreUIUX doc chrome applied
