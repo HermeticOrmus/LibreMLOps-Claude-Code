@@ -35,7 +35,7 @@ The docs are in English only. Translations of the README, [QUICK_START.md](QUICK
 
 ### Share what you built
 
-Discussions are not switched on for this repository. Once they are, the Show and tell category is the place for models, pipelines or RAG systems you built with the pack. Until then, tell us through a [feedback issue](https://github.com/HermeticOrmus/LibreMLOps-Claude-Code/issues/new?template=feedback.yml).
+Share models, pipelines or RAG systems you built with the pack in [Discussions, Show and tell](https://github.com/HermeticOrmus/LibreMLOps-Claude-Code/discussions/categories/show-and-tell). Questions go in [Q&A](https://github.com/HermeticOrmus/LibreMLOps-Claude-Code/discussions/categories/q-a).
 
 ### Test your change locally
 
