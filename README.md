@@ -133,6 +133,13 @@ Building ML systems for regulated domains (healthcare, finance, hiring, criminal
 
 Starred this? Tell us what worked and what is missing: [open a feedback issue](https://github.com/HermeticOrmus/LibreMLOps-Claude-Code/issues/new?template=feedback.yml). Every piece of feedback gets an answer, and changes that come from it are credited in the release notes.
 
+## Contribute
+
+- Pick up work from the [Menu](pantry/MENU.md): every item has a Done-when anyone can check, and one is marked up next.
+- New here? Start with the [good first issues](https://github.com/HermeticOrmus/LibreMLOps-Claude-Code/contribute).
+- Use the forms: [feedback](https://github.com/HermeticOrmus/LibreMLOps-Claude-Code/issues/new?template=feedback.yml), [routing miss](https://github.com/HermeticOrmus/LibreMLOps-Claude-Code/issues/new?template=routing-miss.yml) when Claude picks the wrong agent or skill, and [plugin proposal](https://github.com/HermeticOrmus/LibreMLOps-Claude-Code/issues/new?template=plugin-proposal.yml) for something new.
+- Discussions are not switched on. [CONTRIBUTING.md](CONTRIBUTING.md#ways-to-contribute) says where to share what you built and how to test a change locally.
+
 ## Contributing
 
 PRs welcome for plugin depth, ML framework patterns, specific cloud ML platforms, fine-tuning recipes. See [CONTRIBUTING.md](CONTRIBUTING.md).
