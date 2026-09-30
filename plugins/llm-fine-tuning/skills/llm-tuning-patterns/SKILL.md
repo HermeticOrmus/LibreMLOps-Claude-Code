@@ -1,3 +1,8 @@
+---
+name: "llm-tuning-patterns"
+description: "LLM fine-tuning patterns with code: QLoRA with SFTTrainer, LoRA configuration choices, instruction dataset preparation, DPO preference training, adapter merging and export, and lm-evaluation-harness runs. Use when fine-tuning or aligning an LLM."
+---
+
 # LLM Tuning Patterns
 
 Expert patterns for LoRA, QLoRA, instruction dataset preparation, DPO, and evaluation.

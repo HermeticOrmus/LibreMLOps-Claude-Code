@@ -1,3 +1,8 @@
+---
+name: "feature-engineering-patterns"
+description: "Feature engineering patterns with code: Feast feature store setup, sklearn pipelines with ColumnTransformer, time-series features, K-fold target encoding that avoids leakage, SHAP-based selection, and PSI drift monitoring. Use when building or reviewing model features."
+---
+
 # Feature Engineering Patterns
 
 Expert patterns for feature stores, sklearn pipelines, time-series features, and drift detection.

@@ -1,3 +1,8 @@
+---
+name: "model-monitoring-patterns"
+description: "Model monitoring patterns with code: PSI feature drift, Evidently drift reports and test suites, NannyML performance estimation without labels, whylogs profiles, and Prometheus metrics for model serving. Use when watching a production model for degradation."
+---
+
 # Model Monitoring Patterns
 
 Expert patterns for data drift detection, concept drift, performance estimation without labels, and alert engineering.

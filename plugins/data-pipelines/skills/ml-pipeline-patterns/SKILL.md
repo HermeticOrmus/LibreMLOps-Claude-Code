@@ -1,3 +1,8 @@
+---
+name: "ml-pipeline-patterns"
+description: "ML data pipeline patterns with code: Apache Beam DoFns, branching and fan-out, streaming features in Flink, dbt incremental feature models, Great Expectations validation, and backfill strategy. Use when building batch or streaming pipelines that feed models."
+---
+
 # ML Pipeline Patterns
 
 Expert patterns for building batch and streaming ML data pipelines with Apache Beam, Spark, dbt, and orchestrators.

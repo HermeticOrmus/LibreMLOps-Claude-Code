@@ -1,3 +1,8 @@
+---
+name: "pytorch-patterns"
+description: "PyTorch patterns with code: custom Datasets with transforms, nn.Module initialization, model surgery for fine-tuning, custom autograd functions, and DataLoader throughput profiling. Use when writing or reviewing PyTorch code."
+---
+
 # PyTorch Patterns
 
 Expert patterns for custom Dataset/DataLoader, nn.Module design, model surgery, custom autograd, and profiling.

@@ -1,3 +1,8 @@
+---
+name: "model-registry-patterns"
+description: "Model registry patterns with code: MLflow registration with signature and lineage, staging gates and production promotion, champion and challenger with MLflow aliases, model card generation, and webhook-triggered promotion pipelines. Use when governing model releases."
+---
+
 # Model Registry Patterns
 
 Expert patterns for model registration, versioning, champion/challenger promotion, model cards, and webhook-driven CI/CD.

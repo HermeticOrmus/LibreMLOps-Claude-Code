@@ -1,3 +1,8 @@
+---
+name: "model-deployment-patterns"
+description: "Model serving patterns with code: production FastAPI serving, the Triton model repository layout, ONNX export with validation, canary deployment on Kubernetes, and load testing with Locust. Use when serving a model in production."
+---
+
 # Model Deployment Patterns
 
 Expert patterns for model serving, ONNX export, Triton configuration, and traffic splitting.

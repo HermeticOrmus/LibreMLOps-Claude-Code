@@ -1,3 +1,8 @@
+---
+name: "labeling-patterns"
+description: "Annotation patterns with code: labeling guideline design, active learning sampling loops, Snorkel labeling functions, inter-annotator agreement monitoring, gold-label injection for annotator QA, and Cleanlab label error detection. Use when building or auditing a labeling pipeline."
+---
+
 # Labeling Patterns
 
 Expert patterns for annotation pipeline design, quality assurance, and scalable labeling systems.

@@ -1,3 +1,8 @@
+---
+name: "experiment-tracking-patterns"
+description: "Experiment tracking patterns with code: MLflow manual logging and autologging, W&B sweeps with Bayesian search, Optuna with MLflow, run queries and comparison, and a team tagging strategy. Use when instrumenting or organizing ML experiments."
+---
+
 # Experiment Tracking Patterns
 
 Expert patterns for MLflow, W&B, Optuna hyperparameter search, and experiment organization at scale.

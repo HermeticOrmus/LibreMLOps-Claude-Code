@@ -1,3 +1,8 @@
+---
+name: "model-evaluation-patterns"
+description: "Model evaluation patterns with code: a complete classification report, calibration analysis, sliced evaluation, fairness metrics, and LLM evaluation with BERTScore and RAGAS. Use when deciding whether a model is good enough to ship."
+---
+
 # Model Evaluation Patterns
 
 Expert patterns for classification metrics, calibration, sliced evaluation, fairness, and LLM evaluation.

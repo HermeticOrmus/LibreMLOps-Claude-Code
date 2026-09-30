@@ -1,3 +1,8 @@
+---
+name: "training-patterns"
+description: "Training loop patterns with code: a PyTorch Lightning LightningModule, the Hugging Face Trainer with custom metrics, LR finder and warmup schedules, gradient monitoring and clipping, and checkpoint resume. Use when writing or debugging model training."
+---
+
 # Training Patterns
 
 Expert patterns for PyTorch Lightning modules, HuggingFace Trainer, LR scheduling, gradient monitoring, checkpoint resume, and early stopping.
