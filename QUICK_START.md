@@ -23,7 +23,7 @@ Grok Build reads the same plugin folders. Add the marketplace and install a plug
 
 ```bash
 grok plugin marketplace add HermeticOrmus/LibreMLOps-Claude-Code
-grok plugin install rag-architecture@libre-mlops --trust
+grok plugin install rag-architecture@LibreMLOps-Claude-Code --trust
 # or, without the marketplace:
 grok plugin install HermeticOrmus/LibreMLOps-Claude-Code#plugins/rag-architecture --trust
 ```
