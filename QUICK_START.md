@@ -17,6 +17,21 @@ cd ~/projects/LibreMLOps-Claude-Code
 ./setup.sh
 ```
 
+### Install in Grok Build
+
+Grok Build reads the same plugin folders. Add the marketplace and install a plugin, or install one plugin straight from its folder:
+
+```bash
+grok plugin marketplace add HermeticOrmus/LibreMLOps-Claude-Code
+grok plugin install rag-architecture@libre-mlops --trust
+# or, without the marketplace:
+grok plugin install HermeticOrmus/LibreMLOps-Claude-Code#plugins/rag-architecture --trust
+```
+
+From a clone, `./setup.sh --grok` installs every plugin through the `grok` CLI. Start a new Grok session to load them. The `libre-mlops-hooks` plugin uses a hook format Grok supports, but it has not been verified in a live Grok session.
+
+### First prompt
+
 Restart Claude Code, then try:
 
 ```
