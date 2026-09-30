@@ -1,0 +1,20 @@
+{
+  "name": "llm-fine-tuning",
+  "version": "1.0.0",
+  "description": "LLM fine-tuning: LoRA and QLoRA, instruction datasets, DPO and PPO alignment, adapter merging, and evaluation.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "llm",
+    "fine-tuning",
+    "lora",
+    "qlora",
+    "dpo"
+  ]
+}

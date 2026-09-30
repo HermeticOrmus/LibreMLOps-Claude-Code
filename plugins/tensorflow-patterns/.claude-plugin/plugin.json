@@ -1,0 +1,19 @@
+{
+  "name": "tensorflow-patterns",
+  "version": "1.0.0",
+  "description": "TensorFlow and Keras: model building, tf.data pipelines, custom layers, SavedModel export, TFLite quantization, and TFX.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "tensorflow",
+    "keras",
+    "tflite",
+    "tfx"
+  ]
+}

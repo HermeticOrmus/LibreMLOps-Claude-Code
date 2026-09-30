@@ -1,0 +1,20 @@
+{
+  "name": "distributed-training",
+  "version": "1.0.0",
+  "description": "Distributed training: DDP, FSDP, DeepSpeed ZeRO, model parallelism, mixed precision, and multi-node debugging.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "distributed-training",
+    "pytorch",
+    "fsdp",
+    "deepspeed",
+    "nccl"
+  ]
+}
