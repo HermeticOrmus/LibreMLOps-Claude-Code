@@ -1,3 +1,8 @@
+---
+name: "prompt-engineering-patterns"
+description: "Prompt patterns with code: chain-of-thought with few-shot examples, structured output with Pydantic and instructor, ReAct agents with tool calls, prompt injection defense, and DSPy optimization. Use when building prompts for a production LLM feature."
+---
+
 # Prompt Engineering Patterns
 
 Expert patterns for chain-of-thought, few-shot design, structured output, ReAct agents, DSPy optimization, and prompt injection defense.

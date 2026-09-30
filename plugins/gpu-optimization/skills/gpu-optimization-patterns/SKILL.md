@@ -1,3 +1,8 @@
+---
+name: "gpu-optimization-patterns"
+description: "GPU optimization patterns with code: memory profiling and budgeting, torch.compile modes, torch.profiler bottleneck analysis, BF16 and FP16 mixed precision, 4-bit quantization with bitsandbytes, and DataLoader tuning. Use when a GPU workload is slow or runs out of memory."
+---
+
 # GPU Optimization Patterns
 
 Expert patterns for memory management, torch.compile, profiling, quantization, and kernel optimization.

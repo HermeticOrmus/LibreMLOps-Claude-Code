@@ -1,3 +1,8 @@
+---
+name: "distributed-training-patterns"
+description: "Distributed training patterns with code: a PyTorch DDP loop, FSDP with a transformer auto-wrap policy, DeepSpeed ZeRO-3 configuration, AMP with GradScaler, gradient checkpointing, and data loading across ranks. Use when scaling training past one GPU."
+---
+
 # Distributed Training Patterns
 
 Expert patterns for DDP, FSDP, DeepSpeed, and mixed precision training across multiple GPUs.

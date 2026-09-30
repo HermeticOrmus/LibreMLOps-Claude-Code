@@ -1,3 +1,8 @@
+---
+name: "data-versioning-patterns"
+description: "Data versioning patterns with code: the Git plus DVC workflow, DVC pipelines and experiments, Delta Lake time travel, OpenLineage events, and versioned dataset splits. Use when making ML data reproducible."
+---
+
 # Data Versioning Patterns
 
 Expert patterns for reproducible data management with DVC, Delta Lake, and data lineage tracking.

@@ -1,3 +1,8 @@
+---
+name: "vectordb-patterns"
+description: "Vector database patterns with code: pgvector with an HNSW index, Pinecone namespaces for isolation, Qdrant named vectors and payload filters, FAISS for offline batch indexing, and embedding drift detection with reindexing. Use when storing and searching embeddings."
+---
+
 # VectorDB Patterns
 
 Expert patterns for HNSW index tuning, pgvector setup, Pinecone/Qdrant upsert, metadata filtering, multi-tenancy, and embedding drift management.

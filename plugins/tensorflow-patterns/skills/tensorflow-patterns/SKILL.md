@@ -1,3 +1,8 @@
+---
+name: "tensorflow-patterns"
+description: "TensorFlow patterns with code: the Keras functional API, an optimized tf.data pipeline, custom layers and losses, SavedModel export with a serving signature, and TFLite post-training quantization. Use when building or exporting TensorFlow models."
+---
+
 # TensorFlow Patterns
 
 Expert patterns for Keras functional API, tf.data pipeline ordering, custom layers, SavedModel export, and TFLite quantization.

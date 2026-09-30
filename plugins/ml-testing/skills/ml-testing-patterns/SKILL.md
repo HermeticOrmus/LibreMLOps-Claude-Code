@@ -1,3 +1,8 @@
+---
+name: "ml-testing-patterns"
+description: "ML testing patterns with code: pytest fixtures for models and data, data quality tests, CheckList-style behavioral tests, and performance regression gates in CI. Use when adding tests to an ML codebase."
+---
+
 # ML Testing Patterns
 
 Expert patterns for data quality tests, model unit tests, behavioral tests, and performance regression gates.

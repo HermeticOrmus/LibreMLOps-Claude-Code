@@ -1,3 +1,8 @@
+---
+name: "mlflow-patterns"
+description: "MLflow patterns with code: a production tracking server setup, model signatures and registration, MLproject files, custom pyfunc flavors, and registry webhooks for CI/CD. Use when running MLflow for a team."
+---
+
 # MLflow Patterns
 
 Expert patterns for MLflow tracking server, model registry, custom flavors, and deployment.
