@@ -1,0 +1,160 @@
+{
+  "name": "libre-mlops",
+  "owner": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "metadata": {
+    "description": "ML engineering and MLOps plugins for Claude Code: data pipelines, training, fine-tuning, evaluation, deployment, monitoring, RAG, and vector databases.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "data-labeling",
+      "description": "Data labeling: annotation guidelines, platforms, inter-annotator agreement, active learning, weak supervision, and label error detection.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/data-labeling"
+    },
+    {
+      "name": "data-pipelines",
+      "description": "ML data pipelines: Apache Beam, Spark, dbt, orchestration, streaming features, validation, and backfills.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/data-pipelines"
+    },
+    {
+      "name": "data-versioning",
+      "description": "Data versioning: DVC, Delta Lake, lineage, dataset cards, and reproducible dataset splits.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/data-versioning"
+    },
+    {
+      "name": "distributed-training",
+      "description": "Distributed training: DDP, FSDP, DeepSpeed ZeRO, model parallelism, mixed precision, and multi-node debugging.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/distributed-training"
+    },
+    {
+      "name": "experiment-tracking",
+      "description": "Experiment tracking: MLflow, Weights & Biases, Neptune, ClearML, hyperparameter search, and run organization.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/experiment-tracking"
+    },
+    {
+      "name": "feature-engineering",
+      "description": "Feature engineering: feature stores, transformations, selection, time-series features, leakage checks, and drift.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/feature-engineering"
+    },
+    {
+      "name": "gpu-optimization",
+      "description": "GPU optimization: profiling, memory management, torch.compile, Flash Attention, Triton kernels, and quantization.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/gpu-optimization"
+    },
+    {
+      "name": "llm-fine-tuning",
+      "description": "LLM fine-tuning: LoRA and QLoRA, instruction datasets, DPO and PPO alignment, adapter merging, and evaluation.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/llm-fine-tuning"
+    },
+    {
+      "name": "ml-testing",
+      "description": "ML testing: data quality tests, model unit tests, behavioral tests, and performance regression gates.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/ml-testing"
+    },
+    {
+      "name": "mlflow-integration",
+      "description": "MLflow: tracking server, model signatures, Model Registry, projects, custom flavors, and serving.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/mlflow-integration"
+    },
+    {
+      "name": "model-deployment",
+      "description": "Model deployment: ONNX export, BentoML, TorchServe, Triton, FastAPI serving, dynamic batching, and canary rollouts.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/model-deployment"
+    },
+    {
+      "name": "model-evaluation",
+      "description": "Model evaluation: metrics with confidence intervals, calibration, sliced and fairness evaluation, and LLM output quality.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/model-evaluation"
+    },
+    {
+      "name": "model-monitoring",
+      "description": "Model monitoring: data and concept drift, performance estimation without labels, and alerting without alert fatigue.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/model-monitoring"
+    },
+    {
+      "name": "model-registry",
+      "description": "Model registry: versioning, staging gates, champion and challenger promotion, model cards, and CI/CD webhooks.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/model-registry"
+    },
+    {
+      "name": "model-training",
+      "description": "Model training: PyTorch Lightning and Hugging Face Trainer loops, LR schedules, gradient health, checkpoints, and early stopping.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/model-training"
+    },
+    {
+      "name": "prompt-engineering",
+      "description": "Prompt engineering: prompting techniques, system prompts, structured output, injection defense, DSPy, and prompt versioning.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/prompt-engineering"
+    },
+    {
+      "name": "pytorch-patterns",
+      "description": "PyTorch: custom datasets and DataLoaders, nn.Module design, model surgery, custom autograd, and profiling.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/pytorch-patterns"
+    },
+    {
+      "name": "rag-architecture",
+      "description": "Retrieval-augmented generation: chunking, embeddings, vector stores, hybrid retrieval, reranking, grounded generation, and evaluation.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/rag-architecture"
+    },
+    {
+      "name": "tensorflow-patterns",
+      "description": "TensorFlow and Keras: model building, tf.data pipelines, custom layers, SavedModel export, TFLite quantization, and TFX.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/tensorflow-patterns"
+    },
+    {
+      "name": "vector-databases",
+      "description": "Vector databases: index selection and tuning, pgvector, Pinecone, Qdrant, multi-tenancy, and reindexing after embedding changes.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/vector-databases"
+    },
+    {
+      "name": "libre-mlops-hooks",
+      "description": "Optional LibreMLOps hooks: an ML project summary at session start, a confirmation prompt before Claude touches secrets files or runs commands that destroy data, models, or run history, and post-edit checks for empty writes and matching tests.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/libre-mlops-hooks"
+    }
+  ]
+}
