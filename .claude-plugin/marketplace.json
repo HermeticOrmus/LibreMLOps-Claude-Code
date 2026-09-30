@@ -128,6 +128,12 @@
       "source": "./plugins/vector-databases",
       "description": "Vector databases: index selection and tuning, pgvector, Pinecone, Qdrant, multi-tenancy, and reindexing after embedding changes.",
       "version": "1.0.0"
+    },
+    {
+      "name": "libre-mlops-hooks",
+      "source": "./plugins/libre-mlops-hooks",
+      "description": "Optional LibreMLOps hooks: an ML project summary at session start, a confirmation prompt before Claude touches secrets files or runs commands that destroy data, models, or run history, and post-edit checks for empty writes and matching tests.",
+      "version": "1.0.0"
     }
   ]
 }

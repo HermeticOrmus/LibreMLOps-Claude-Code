@@ -1,0 +1,20 @@
+{
+  "name": "libre-mlops-hooks",
+  "version": "1.0.0",
+  "description": "Optional LibreMLOps hooks: an ML project summary at session start, a confirmation prompt before Claude touches secrets files or runs commands that destroy data, models, or run history, and post-edit checks for empty writes and matching tests.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreMLOps-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "hooks",
+    "secrets",
+    "dvc",
+    "mlflow",
+    "safety"
+  ]
+}
