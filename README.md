@@ -91,6 +91,23 @@ claude plugin install rag-architecture@libre-mlops
 
 Install as many plugins as you need, then restart Claude Code to load them. `/plugin` inside Claude Code opens the plugin manager, where you can browse the rest of the pack.
 
+### Install in Grok Build
+
+Grok Build reads the same plugin folders. Add the marketplace, then install any plugin by name:
+
+```bash
+grok plugin marketplace add HermeticOrmus/LibreMLOps-Claude-Code
+grok plugin install rag-architecture@libre-mlops --trust
+```
+
+Or install one plugin straight from its folder, without adding the marketplace:
+
+```bash
+grok plugin install HermeticOrmus/LibreMLOps-Claude-Code#plugins/rag-architecture --trust
+```
+
+`--trust` confirms you trust the source; without it Grok shows what the plugin would activate and stops. Start a new Grok session to load what you installed. From a clone, `./setup.sh --grok` installs the whole pack through the `grok` CLI. The `libre-mlops-hooks` plugin uses a hook format Grok supports, but it has not been verified in a live Grok session (see the [ledger](LEDGER.md)).
+
 ### Install from a clone
 
 ```bash
@@ -99,7 +116,7 @@ cd ~/projects/LibreMLOps-Claude-Code
 ./setup.sh
 ```
 
-`./setup.sh` registers the clone as the `libre-mlops` marketplace and installs all 21 plugins through the Claude Code CLI. `./setup.sh --list` shows them, `./setup.sh --only rag-architecture,model-deployment` installs a subset, and `./setup.sh --uninstall` removes them.
+`./setup.sh` registers the clone as the `libre-mlops` marketplace and installs all 21 plugins through the Claude Code CLI. `./setup.sh --list` shows them, `./setup.sh --only rag-architecture,model-deployment` installs a subset, and `./setup.sh --uninstall` removes them. Add `--grok` to install through Grok Build instead; it works with `--list`, `--only`, and `--uninstall`, and needs `grok` and `jq`.
 
 ### Optional hooks
 
@@ -132,6 +149,8 @@ Building ML systems for regulated domains (healthcare, finance, hiring, criminal
 ## Feedback
 
 Starred this? Tell us what worked and what is missing: [open a feedback issue](https://github.com/HermeticOrmus/LibreMLOps-Claude-Code/issues/new?template=feedback.yml). Every piece of feedback gets an answer, and changes that come from it are credited in the release notes.
+
+Cracks we found and sealed: [LEDGER.md](LEDGER.md).
 
 ## Contribute
 
