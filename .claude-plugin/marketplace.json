@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "ML engineering and MLOps plugins for Claude Code: data pipelines, training, fine-tuning, evaluation, deployment, monitoring, RAG, and vector databases.",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
