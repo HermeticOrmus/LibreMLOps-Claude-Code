@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [1.1.0] - 2026-09-30
 
 ### Added
 - A public pantry (`pantry/`): a competitor map, an X mine and a people mine, each row cited, plus a pantry queue of Goal atoms with a Done-when anyone can check.
