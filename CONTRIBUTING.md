@@ -63,7 +63,7 @@ claude plugin details <name>@libre-mlops
 
 Open a new shell afterwards, or `unset CLAUDE_CONFIG_DIR`, so your own config is untouched.
 
-CI ([`.github/workflows/validate.yml`](.github/workflows/validate.yml)) runs the same checks on every pull request: it validates the marketplace and every plugin, then installs all of them into a clean config. A first-time contributor's CI run waits until a maintainer approves it.
+CI ([`.github/workflows/check.yml`](.github/workflows/check.yml), running `bash scripts/check.sh`) runs the same checks on every pull request: it validates the marketplace and every plugin, then installs all of them into a clean config. A first-time contributor's CI run waits until a maintainer approves it.
 
 ## Welcome
 - Plugin deepening
